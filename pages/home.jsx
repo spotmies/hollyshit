@@ -15,7 +15,7 @@ export default function HomePage() {
   const [currentMintCount, setCurrentMintCount] = useState(4969);
   const [walletAddress, setWalletAddress] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const [chainId, setChainId] = useState(1);
+  // const [chainId, setChainId] = useState(1);
 
   // Google analytics constants
   const gaWalletTracker = useAnalyticsEventTracker("wallet");
@@ -87,7 +87,7 @@ export default function HomePage() {
       const provider = new ethers.providers.Web3Provider(window?.ethereum);
       const { chainId } = await provider.getNetwork();
       console.log("chainId", chainId);
-      setChainId(chainId);
+      // setChainId(chainId);
 
       if (chainId !== 1) {
         alert("Please connect to Ethereum Mainnet");
