@@ -130,7 +130,7 @@ export default function HomePage() {
       try {
         let count = parseInt(TotalMinted._hex, 16);
         setCurrentMintCount(count);
-        if (count >= 3769) {
+        if (count >= 4969) {
           setSoldOut(true);
         }
       } catch (error) {
