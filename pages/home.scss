@@ -116,7 +116,24 @@
     }
   }
 }
-
+.mint-counter {
+  font-size: 40px;
+  align-self: center;
+}
+.div-center-vh {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.mint-head {
+  font-size: 35px;
+  text-align: center;
+}
+.full-width {
+  width: 100%;
+}
 @media screen and (max-width: 498px) {
   .nav-bar {
     width: 100% !important;

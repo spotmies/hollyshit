@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import CountDown from "./countDown";
 
 export default function HomePage() {
   const [count, setcount] = useState(0);
   const [popup, setPopup] = useState(false);
   const [shitCount, setShitCount] = useState(1);
+  const [mintStart, setMintStart] = useState(false);
   const add = () => {
     if (shitCount == 2) {
       return alert("You can't add more than 2");
@@ -56,18 +58,30 @@ export default function HomePage() {
       {popup && (
         <div className="popup">
           <div className="popup-content">
-            <p className="max-shit">Set your max shits</p>
-            <div className="mint-control">
-              <span className="back-box" onClick={minus}>
-                <p className="minus">-</p>
-              </span>
-              <p>{shitCount}</p>
-              <span className="back-box" onClick={add}>
-                <p className="plus">+</p>
-              </span>
-            </div>
-            <p className="get-shit">Click here to get</p>
-            <p className="shit-text">{">> shit"}</p>
+            {!mintStart ? (
+              <div className="div-center-vh">
+                <CountDown
+                  trigger2={(val) => {
+                    setMintStart(val ?? false);
+                  }}
+                />
+              </div>
+            ) : (
+              <>
+                <p className="max-shit">Set your max shits</p>
+                <div className="mint-control">
+                  <span className="back-box" onClick={minus}>
+                    <p className="minus">-</p>
+                  </span>
+                  <p>{shitCount}</p>
+                  <span className="back-box" onClick={add}>
+                    <p className="plus">+</p>
+                  </span>
+                </div>
+                <p className="get-shit">Click here to get</p>
+                <p className="shit-text">{">> shit"}</p>
+              </>
+            )}
           </div>
         </div>
       )}
