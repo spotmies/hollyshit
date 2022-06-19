@@ -2,9 +2,28 @@ import React, { useState } from "react";
 
 export default function HomePage() {
   const [count, setcount] = useState(0);
+  const [popup, setPopup] = useState(false);
+  const [shitCount, setShitCount] = useState(1);
+  const add = () => {
+    if (shitCount == 2) {
+      return alert("You can't add more than 2");
+    }
+    setShitCount(parseInt(shitCount) + 1);
+  };
+
+  const minus = () => {
+    if (shitCount === 1) return;
+    setShitCount(parseInt(shitCount) - 1);
+  };
+
   return (
     <div className="home-page-parent">
-      <div className="nav-bar">
+      <div
+        className="nav-bar"
+        onClick={() => {
+          if (popup) setPopup(false);
+        }}
+      >
         <div className="nav-bar-left">
           <h1 className="heading">Holy Shit</h1>
         </div>
@@ -17,16 +36,41 @@ export default function HomePage() {
           />
         </div>
       </div>
-      <div className="home-body center-div">
+      <div
+        className="home-body center-div"
+        onClick={() => {
+          if (popup) setPopup(false);
+        }}
+      >
         <img src="/shitimages.png" alt="holy" className="holy-image pointer" />
         <p className="is-live">Shitting is live</p>
         <img
+          onClick={() => setPopup(true)}
           src="/shitbutton.png"
           alt="shit-button"
           className="shit-button pointer"
         />
         <p className="count">{count + " /4969"}</p>
       </div>
+
+      {popup && (
+        <div className="popup">
+          <div className="popup-content">
+            <p className="max-shit">Set your max shits</p>
+            <div className="mint-control">
+              <span className="back-box" onClick={minus}>
+                <p className="minus">-</p>
+              </span>
+              <p>{shitCount}</p>
+              <span className="back-box" onClick={add}>
+                <p className="plus">+</p>
+              </span>
+            </div>
+            <p className="get-shit">Click here to get</p>
+            <p className="shit-text">{">> shit"}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
