@@ -99,7 +99,7 @@ export default function HomePage() {
 
   const getContract = () => {
     try {
-      const contractAddress = "0x263dB316A36D712eE5D12734E8ACD440A0864674";
+      const contractAddress = "0x5280AfbEA20f40b3d18Efe0FcD090C31eb7F5968";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
