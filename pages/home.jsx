@@ -4,9 +4,9 @@ import contractabi from "./abi.json";
 import useAnalyticsEventTracker from "./useAnalyticsEventTracker";
 
 export default function HomePage() {
-  const [count, setcount] = useState(0);
+  // const [count, setcount] = useState(0);
   const [wallets, setWallets] = useState("");
-  const [currentMintCount, setCurrentMintCount] = useState(3769);
+  const [currentMintCount, setCurrentMintCount] = useState(4969);
   const [walletAddress, setWalletAddress] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [chainId, setChainId] = useState(1);
@@ -86,7 +86,7 @@ export default function HomePage() {
 
   const getContract = () => {
     try {
-      const contractAddress = "0x41187d5E6DA8BFF81ABD46cEDAcc3EE602aC5230";
+      const contractAddress = "0x263dB316A36D712eE5D12734E8ACD440A0864674";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
@@ -202,7 +202,7 @@ export default function HomePage() {
           onClick={clickedMint}
           className="shit-button pointer"
         />
-        <p className="count">{count + " /4969"}</p>
+        <p className="count">{currentMintCount + " /4969"}</p>
       </div>
     </div>
   );
