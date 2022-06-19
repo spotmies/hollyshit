@@ -5,15 +5,28 @@ import useAnalyticsEventTracker from "./useAnalyticsEventTracker";
 
 export default function HomePage() {
   // const [count, setcount] = useState(0);
+
+  // 
+  // 
+  // Contract Integration constants
+  // 
+  // 
   const [wallets, setWallets] = useState("");
   const [currentMintCount, setCurrentMintCount] = useState(4969);
   const [walletAddress, setWalletAddress] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [chainId, setChainId] = useState(1);
 
+  // Google analytics constants
   const gaWalletTracker = useAnalyticsEventTracker("wallet");
   const gaMintTracker = useAnalyticsEventTracker("mint");
   const gaOtherTracker = useAnalyticsEventTracker("others");
+
+  // 
+  // 
+  // End of Contract Integration constants
+  // 
+  // 
 
   // 
   // 
