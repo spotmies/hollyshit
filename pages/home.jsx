@@ -6,6 +6,7 @@ export default function HomePage() {
   const [popup, setPopup] = useState(false);
   const [shitCount, setShitCount] = useState(1);
   const [mintStart, setMintStart] = useState(false);
+  const [outofshit, setOutofshit] = useState(false);
   const add = () => {
     if (shitCount == 2) {
       return alert("You can't add more than 2");
@@ -16,6 +17,18 @@ export default function HomePage() {
   const minus = () => {
     if (shitCount === 1) return;
     setShitCount(parseInt(shitCount) - 1);
+  };
+  const getShitText = () => {
+    const futureDate = new Date(1655740800000);
+    // const futureDate = new Date(1655651220000);
+    if (outofshit) {
+      return "Sorry we're out of shits";
+    }
+    if (futureDate > new Date()) {
+      return "Shitting is not live";
+    }
+
+    return "Shitting is live";
   };
 
   return (
@@ -45,7 +58,7 @@ export default function HomePage() {
         }}
       >
         <img src="/shitimages.png" alt="holy" className="holy-image pointer" />
-        <p className="is-live">Shitting is live</p>
+        <p className="is-live">{getShitText()}</p>
         <img
           onClick={() => setPopup(true)}
           src="/shitbutton.png"
