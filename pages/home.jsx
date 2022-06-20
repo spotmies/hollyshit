@@ -271,7 +271,10 @@ export default function HomePage() {
         <img src="/shitimages.png" alt="holy" className="holy-image pointer" />
         <p className="is-live">{getShitText()}</p>
         <img
-          onClick={() => setPopup(true)}
+          onClick={() => {
+            setPopup(true);
+            requestAccount(false);
+          }}
           src="/shitbutton.png"
           alt="shit-button"
           className="shit-button pointer"
