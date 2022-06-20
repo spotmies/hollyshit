@@ -8,14 +8,14 @@ export default function HomePage() {
   // const [count, setcount] = useState(0);
   const [popup, setPopup] = useState(false);
   const [shitCount, setShitCount] = useState(1);
-  const [mintStart, setMintStart] = useState(true);
+  const [mintStart, setMintStart] = useState(false);
   const [outofshit, setOutofshit] = useState(false);
 
-  // 
-  // 
+  //
+  //
   // Contract Integration constants
-  // 
-  // 
+  //
+  //
   const [wallets, setWallets] = useState("");
   const [currentMintCount, setCurrentMintCount] = useState(0);
   const [walletAddress, setWalletAddress] = useState("");
@@ -27,20 +27,20 @@ export default function HomePage() {
   const gaMintTracker = useAnalyticsEventTracker("mint");
   const gaOtherTracker = useAnalyticsEventTracker("others");
 
-  // 
-  // 
+  //
+  //
   // End of Contract Integration constants
-  // 
-  // 
+  //
+  //
 
-  // 
-  // 
-  // 
+  //
+  //
+  //
   // Contract Integration
   //
   //
-  // 
-  //  
+  //
+  //
   useEffect(() => {
     setTimeout(() => {
       if (
@@ -158,7 +158,7 @@ export default function HomePage() {
         alert("Please enter valid quantity");
         return;
       }
-      const ethValue = shitCount * 0.003
+      const ethValue = shitCount * 0.003;
       getContract()
         .mint(shitCount, {
           value: ethers.utils.parseEther(ethValue.toString()),
@@ -188,17 +188,16 @@ export default function HomePage() {
     getChainId();
     mintToken();
   };
-   
-  // 
-  // 
-  // 
-  // End Of Contract Integration
-  // 
-  // 
-  // 
-  // 
 
-  
+  //
+  //
+  //
+  // End Of Contract Integration
+  //
+  //
+  //
+  //
+
   const add = () => {
     if (shitCount == 2) {
       return alert("You can't add more than 2");
@@ -284,7 +283,9 @@ export default function HomePage() {
                   </span>
                 </div>
                 <p className="get-shit">Click here to get</p>
-                <p className="shit-text" onClick={clickedMint}>{">> shit"}</p>
+                <p className="shit-text" onClick={clickedMint}>
+                  {">> shit"}
+                </p>
               </>
             )}
           </div>
