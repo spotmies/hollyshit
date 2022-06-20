@@ -160,7 +160,7 @@ export default function HomePage() {
       }
       getContract()
         .mint(quantity, {
-          value: ethers.utils.parseEther("0"),
+          value: ethers.utils.parseEther(shitCount * 0.003),
         })
         .then((val) => {
           alert("Token minted successfully");
