@@ -1,78 +1,156 @@
-.home-page-parent{
-    font-family: "shitfont" !important;
-    height: 100vh !important;
-    width: 100vw !important;
-    .nav-bar{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-left: 70px;
-        padding-right: 70px;
-        align-items: center;
-        .nav-bar-right{
-            img{
-                // margin-top: 30px;
-                margin-right: 40px;
-                
-                width: 40px;
-                height: 40px;
-            }
-        }
+.home-page-parent {
+  font-family: "shitfont" !important;
+  height: 100vh !important;
+  width: 100% !important;
+
+  .nav-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 70px;
+    align-items: center;
+    .nav-bar-right {
+      img {
+        // margin-top: 30px;
+        margin-right: 40px;
+
+        width: 40px;
+        height: 40px;
+      }
     }
-    .home-body{
-        .is-live{
-            font-size: 55px;
-        margin-top: -70px;
-            transform: rotate(350deg);
-        }
-        .holy-image{
-            margin-top: -100px;
-            width: 600px;
-            // width: calc(100vw - 750px) ;
-        }
-        .shit-button{
-            width: 230px;
-            margin-top: -40px;
-        }
-        .count{
-            font-size: 40px;
-            margin-top: -1px;
-            padding-top: 15px;
-          
-        }
+  }
+  .home-body {
+    .is-live {
+      font-size: 55px;
+      margin-top: -70px;
+      transform: rotate(350deg);
     }
+    .holy-image {
+      margin-top: -100px;
+      width: 600px;
+      // width: calc(100vw - 750px) ;
+    }
+    .shit-button {
+      width: 230px;
+      margin-top: -40px;
+    }
+    .count {
+      font-size: 40px;
+      margin-top: -1px;
+      padding-top: 15px;
+    }
+  }
 }
-.center-div{
+.center-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(241, 241, 241, 0.933);
+  border-radius: 15px;
+
+  z-index: 9;
+  width: 400px;
+  height: 400px;
+  .popup-content {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    .max-shit {
+      font-size: 34px;
+    }
+    .mint-control {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 40px;
+        margin-right: 20px;
+      }
+      .back-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 20%;
+        margin-right: 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        cursor: pointer;
+      }
+      .minus {
+        margin-left: 15px;
+      }
+      .plus {
+        margin-left: 15px;
+      }
+    }
+    .get-shit {
+      font-size: 30px;
+    }
+    .shit-text {
+      font-size: 30px;
+      color: blue;
+      margin-top: -20px;
+      cursor: pointer;
+    }
+  }
 }
-.pointer{
-    cursor: pointer;
+.mint-counter {
+  font-size: 40px;
+  align-self: center;
 }
-
-
+.div-center-vh {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.mint-head {
+  font-size: 35px;
+  text-align: center;
+}
+.full-width {
+  width: 100%;
+}
 @media screen and (max-width: 498px) {
-    .nav-bar{
-        width: 100% !important;
-        padding-top: 20px !important;
-        padding-left: 15px !important;
-        padding-right: 10px !important;
+  .nav-bar {
+    width: 100% !important;
+    padding-top: 20px !important;
+    padding-left: 15px !important;
+    padding-right: 10px !important;
+  }
+
+  .home-body {
+    .holy-image {
+      // width: calc(100vw - 40px) !important;
+      width: 100% !important;
     }
-    .home-body {
-        .holy-image {
-            // width: calc(100vw - 40px) !important; 
-            width: 100% !important;
-        }
-        .is-live{
-            font-size: 40px !important;
-            padding-bottom: 20px !important;
-            padding-top: 20px !important;
-        }
+    .is-live {
+      font-size: 40px !important;
+      padding-bottom: 20px !important;
+      padding-top: 20px !important;
     }
+  }
 }
