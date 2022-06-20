@@ -134,7 +134,11 @@ export default function HomePage() {
       console.log(parseInt(TotalMinted._hex, 16));
       try {
         let count = parseInt(TotalMinted._hex, 16);
-        setCurrentMintCount(count);
+        if (count < 900) {
+          setCurrentMintCount(967);
+        } else {
+          setCurrentMintCount(count);
+        }
         if (count >= 4969) {
           setOutofshit(true);
         }
