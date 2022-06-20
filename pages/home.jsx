@@ -8,7 +8,7 @@ export default function HomePage() {
   // const [count, setcount] = useState(0);
   const [popup, setPopup] = useState(false);
   const [shitCount, setShitCount] = useState(1);
-  const [mintStart, setMintStart] = useState(true);
+  const [mintStart, setMintStart] = useState(false);
   const [outofshit, setOutofshit] = useState(false);
 
   // 
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   const getContract = () => {
     try {
-      const contractAddress = "0x5280AfbEA20f40b3d18Efe0FcD090C31eb7F5968";
+      const contractAddress = "0x489BAa2E19159F3D04748902B1f3E2f48E0e85D1";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
