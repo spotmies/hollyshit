@@ -139,7 +139,7 @@ export default function HomePage() {
           setSoldOut(true);
         }
       } catch (error) {
-        setCurrentMintCount(400);
+        setCurrentMintCount(2000);
       }
 
       // setCurrentMintCount(3769);
