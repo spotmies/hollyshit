@@ -158,7 +158,13 @@ export default function HomePage() {
         alert("Please enter valid quantity");
         return;
       }
-      const ethValue = shitCount * 0.003
+      
+      if (currentMintCount + shitCount > 1000) {
+        var ethValue = shitCount * 0.003;
+      } else {
+        var ethValue = shitCount * 0;
+      }
+      
       getContract()
         .mint(shitCount, {
           value: ethers.utils.parseEther(ethValue.toString()),
@@ -186,6 +192,7 @@ export default function HomePage() {
   const clickedMint = () => {
     requestAccount(false);
     getChainId();
+    mintCount();
     mintToken();
   };
    
