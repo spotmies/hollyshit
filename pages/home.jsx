@@ -253,6 +253,12 @@ export default function HomePage() {
             src="/etherscan.png"
             alt="etherScan"
             className="etherScan pointer"
+            onClick={() => {
+              window.open(
+                "https://etherscan.io/tx/0xd6283e978ae864de77e77983f9c0495ab1535689487f15f51c9612968d43ed8c",
+                "_blank"
+              );
+            }}
           />
         </div>
       </div>
