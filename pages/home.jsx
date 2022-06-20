@@ -170,7 +170,7 @@ export default function HomePage() {
           value: ethers.utils.parseEther(ethValue.toString()),
         })
         .then((val) => {
-          alert("Token minted successfully");
+          alert("Mint is in progress...");
           // console.log("val", val);
           // console.log("error", error);
         })
