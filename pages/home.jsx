@@ -17,9 +17,9 @@ export default function HomePage() {
   // 
   // 
   const [wallets, setWallets] = useState("");
-  const [currentMintCount, setCurrentMintCount] = useState(4969);
+  const [currentMintCount, setCurrentMintCount] = useState(0);
   const [walletAddress, setWalletAddress] = useState("");
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
   // const [chainId, setChainId] = useState(1);
 
   // Google analytics constants
@@ -136,7 +136,7 @@ export default function HomePage() {
         let count = parseInt(TotalMinted._hex, 16);
         setCurrentMintCount(count);
         if (count >= 4969) {
-          setSoldOut(true);
+          setOutofshit(true);
         }
       } catch (error) {
         setCurrentMintCount(2000);
@@ -154,13 +154,14 @@ export default function HomePage() {
     // const supply = await contract.suppliedNFTs();
     // setSupply(supply);
     try {
-      if (quantity < 1) {
+      if (shitCount < 1) {
         alert("Please enter valid quantity");
         return;
       }
+      const ethValue = shitCount * 0.003
       getContract()
-        .mint(quantity, {
-          value: ethers.utils.parseEther(shitCount * 0.003),
+        .mint(shitCount, {
+          value: ethers.utils.parseEther(ethValue.toString()),
         })
         .then((val) => {
           alert("Token minted successfully");
