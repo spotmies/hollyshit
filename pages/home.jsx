@@ -234,7 +234,14 @@ export default function HomePage() {
           <h1 className="heading">Holy Shit</h1>
         </div>
         <div className="nav-bar-right">
-          <img src="/opensea.png" alt="openSea" className="openSea pointer" />
+          <img
+            src="/twitter.png"
+            alt="twitter"
+            className="twitter pointer"
+            onClick={() => {
+              window.open("https://twitter.com/holyshitnft_wtf", "_blank");
+            }}
+          />
           <img
             src="/etherscan.png"
             alt="etherScan"

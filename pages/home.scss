@@ -54,7 +54,11 @@
 .pointer {
   cursor: pointer;
 }
-
+.twitter {
+  width: 35px !important;
+  height: 35px !important;
+  filter: contrast(1.75);
+}
 .popup {
   position: fixed;
   left: 50%;
